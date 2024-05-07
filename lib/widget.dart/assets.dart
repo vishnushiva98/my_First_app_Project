@@ -1,0 +1,9 @@
+String sports = "assets/images/sports.jpg";
+String legends = "assets/images/legends.jpg";
+String electric = "assets/images/electric.jpg";
+String classsic = "assets/images/classic.jpg";
+String audiR8 = "assets/images/audi_r8.jpg";
+String audiR8Back = "assets/images/audi_r8_back.jpg";
+String classicto = "assets/images/Classic.to.jpg";
+String koeg = "assets/images/koegnisegg.jpg";
+String merc = "assets/images/ Mercedes.jpg";
