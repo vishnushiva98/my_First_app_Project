@@ -6,4 +6,5 @@ String audiR8 = "assets/images/audi_r8.jpg";
 String audiR8Back = "assets/images/audi_r8_back.jpg";
 String classicto = "assets/images/Classic.to.jpg";
 String koeg = "assets/images/koegnisegg.jpg";
-String merc = "assets/images/ Mercedes.jpg";
+String merc = "assets/images/Mercedes.jpg";
+String cd = "assets/images/cd-logo.jpg";

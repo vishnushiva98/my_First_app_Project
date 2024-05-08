@@ -1,18 +1,31 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class firstSectionWidget extends StatelessWidget {
   final String menuText;
   final void Function() menuAction;
+  final IconData? menuIcon;
+  final bool menuIconControl;
 
   firstSectionWidget({
     required this.menuText,
     required this.menuAction,
+    this.menuIcon,
+    this.menuIconControl = false,
   });
 
   @override
   Widget build(BuildContext context) {
+    Widget iconIndicater;
+    if (menuIconControl == true) {
+      iconIndicater = Icon(
+        menuIcon,
+        color: Colors.black,
+        size: 14,
+      );
+    } else {
+      iconIndicater = const SizedBox();
+    }
+
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(4.0),
@@ -20,22 +33,27 @@ class firstSectionWidget extends StatelessWidget {
           onPressed: menuAction,
           style: OutlinedButton.styleFrom(
             // backgroundColor: Colors.grey,
-            side: BorderSide(color: Colors.grey),
+            padding: EdgeInsets.only(
+              right: 10,
+              left: 10,
+            ),
+            side: BorderSide(color: Colors.grey, width: 1.5),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
           ),
           child: Row(
             children: [
+              //  menuIconControl?
+              iconIndicater,
               Padding(
                 padding: EdgeInsets.all(2),
                 child: Text(
                   menuText,
-
                   style: TextStyle(
                       fontSize: 12,
                       color: Colors.black,
                       fontWeight: FontWeight.w600),
-                  // textAlign: TextAlign.right,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],
@@ -69,7 +87,7 @@ class FirstSectionImages extends StatelessWidget {
                 pictur,
                 width: MediaQuery.of(context).size.width / 4,
                 height: MediaQuery.of(context).size.height / 7,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -136,7 +154,7 @@ class firstFrimOut extends StatelessWidget {
                       frimOutImage,
                       width: MediaQuery.of(context).size.width / 1,
                       height: MediaQuery.of(context).size.height / 3.6,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -155,7 +173,7 @@ class firstFrimOut extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.star,
-                            color: const Color.fromARGB(255, 232, 209, 2),
+                            color: const Color.fromARGB(255, 206, 176, 3),
                             size: 17,
                           ),
                           Padding(

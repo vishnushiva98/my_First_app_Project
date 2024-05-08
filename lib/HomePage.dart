@@ -20,6 +20,7 @@ class HomePage extends StatelessWidget {
             children: [
               //calling AppBarButton class for app button
               AppBarButton(
+                barButtonSize: 215,
                 barButton: Icons.location_on,
                 buttonAction: () {
                   print("dooom");
@@ -32,6 +33,7 @@ class HomePage extends StatelessWidget {
               //calling AppBarButton class for app button
 
               AppBarButton(
+                barButtonSize: 255,
                 barButton: Icons.calendar_month,
                 buttonAction: () {
                   print("dooom");
@@ -42,11 +44,15 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 11.0),
-        child: Container(
-          child: firstSection(),
+      body: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25),
+            topRight: Radius.circular(25),
+          ),
+          color: Colors.red,
         ),
+        child: firstSection(),
       ),
 
       // body: ClipRRect(

@@ -1,4 +1,5 @@
 import 'package:cartrack_application/HomePage.dart';
+import 'package:cartrack_application/secondSection/secondHomPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +12,10 @@ class myApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.white),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // home: HomePage(),
+      home: SecondHomePage(),
     );
   }
 }

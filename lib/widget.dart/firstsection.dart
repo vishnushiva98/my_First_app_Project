@@ -1,4 +1,5 @@
 import 'package:cartrack_application/widget.dart/assets.dart';
+import 'package:cartrack_application/widget.dart/bottomNav.dart';
 import 'package:cartrack_application/widget.dart/firstSectionWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -8,119 +9,92 @@ class firstSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(0.0),
+      body: Container(
+        padding: EdgeInsets.only(left: 15, top: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25),
+            topRight: Radius.circular(25),
+          ),
+          color: Colors.white,
+        ),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 25.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                        // backgroundColor: Colors.grey,
-                        side: BorderSide(color: Colors.grey),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0)),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 5.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 2.0),
-                              child: Icon(
-                                Icons.tune,
-                                color: Colors.black,
-                                size: 14,
-                              ),
-                            ),
-                            Text(
-                              "All filtter",
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  firstSectionWidget(
-                    menuText: "\$200-\$1,000 / day ",
-                    menuAction: () {},
-                  ),
-                  firstSectionWidget(
-                    menuText: "Brand",
-                    menuAction: () {},
-                  ),
-                  firstSectionWidget(
-                    menuText: "Body",
-                    menuAction: () {},
-                  ),
-                  firstSectionWidget(
-                    menuText: "Model",
-                    menuAction: () {},
-                  ),
-                ]),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Row(
-                      children: [
-                        FirstSectionImages(
-                          pictur: sports,
-                          imageText: "Sports",
-                          imageEndText: "78",
-                        ),
-                        const Divider(
-                          endIndent: 10,
-                        ),
-                        FirstSectionImages(
-                          pictur: electric,
-                          imageText: "Electric",
-                          imageEndText: "304",
-                        ),
-                        const Divider(
-                          endIndent: 10,
-                        ),
-                        FirstSectionImages(
-                          pictur: legends,
-                          imageText: "Legends",
-                          imageEndText: "47",
-                        ),
-                        const Divider(
-                          endIndent: 10,
-                        ),
-                        FirstSectionImages(
-                          pictur: classsic,
-                          imageText: "Classsic",
-                          imageEndText: "101",
-                        ),
-                        const Divider(
-                          endIndent: 10,
-                        ),
-                        FirstSectionImages(
-                          pictur: audiR8,
-                          imageText: "Top",
-                          imageEndText: "10",
-                        ),
-                      ],
-                    ),
-                  ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(children: [
+                firstSectionWidget(
+                  menuIconControl: true,
+                  menuIcon: Icons.tune,
+                  menuText: "All filtter",
+                  menuAction: () {},
                 ),
+                firstSectionWidget(
+                  menuIconControl: false,
+                  menuText: "\$200-\$1,000 / day ",
+                  menuAction: () {},
+                ),
+                firstSectionWidget(
+                  menuText: "Brand",
+                  menuAction: () {},
+                ),
+                firstSectionWidget(
+                  menuText: "Body",
+                  menuAction: () {},
+                ),
+                firstSectionWidget(
+                  menuText: "Model",
+                  menuAction: () {},
+                ),
+              ]),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Row(
+                    children: [
+                      FirstSectionImages(
+                        pictur: sports,
+                        imageText: "Sports",
+                        imageEndText: "78",
+                      ),
+                      const Divider(
+                        endIndent: 10,
+                      ),
+                      FirstSectionImages(
+                        pictur: electric,
+                        imageText: "Electric",
+                        imageEndText: "304",
+                      ),
+                      const Divider(
+                        endIndent: 10,
+                      ),
+                      FirstSectionImages(
+                        pictur: legends,
+                        imageText: "Legends",
+                        imageEndText: "47",
+                      ),
+                      const Divider(
+                        endIndent: 10,
+                      ),
+                      FirstSectionImages(
+                        pictur: classsic,
+                        imageText: "Classsic",
+                        imageEndText: "101",
+                      ),
+                      const Divider(
+                        endIndent: 10,
+                      ),
+                      FirstSectionImages(
+                        pictur: audiR8,
+                        imageText: "Top",
+                        imageEndText: "10",
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
             Divider(),
@@ -215,6 +189,59 @@ class firstSection extends StatelessWidget {
           ]),
         ),
       ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.only(left: 15, right: 15),
+        height: 75,
+        color: Colors.white,
+        child: Row(
+          children: [
+            BottomNav(
+              NavIcon: Icons.search,
+              NavText: "SEARCH",
+              NavAction: () {
+                "one";
+              },
+            ),
+            Spacer(),
+            BottomNav(
+              NavIcon: Icons.favorite,
+              NavText: "FAVORIE",
+               NavAction: () {
+                "one";
+              },
+            ),
+            Spacer(),
+            BottomNav(
+              NavIcon: Icons.chat,
+              NavText: "CHAT",
+               NavAction: () {
+                "one";
+              },
+            ),
+            Spacer(),
+            BottomNav(
+              NavIcon: Icons.person,
+              NavText: "PROFILE",
+               NavAction: () {
+                "one";
+              },
+            ),
+          ],
+        ),
+      ),
+
+      // bottomNavigationBar: BottomNavigationBar(
+      //   backgroundColor: Colors.red,
+      //   selectedItemColor: Colors.black,
+      //   unselectedItemColor: Colors.black,
+      //   items: [
+      //     BottomNavigationBarItem(icon: Icon(Icons.search), label: 'SEARCH'),
+      //     BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'FAVORIE'),
+      //     BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'CHAT'),
+      //     // BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'CHAT'),
+      //     // BottomNavigationBarItem(icon: Icon(Icons.post_add), label: 'PROFILE'),
+      //   ],
+      // ),
     );
   }
 }
