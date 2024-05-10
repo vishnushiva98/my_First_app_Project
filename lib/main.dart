@@ -1,5 +1,7 @@
 import 'package:cartrack_application/HomePage.dart';
 import 'package:cartrack_application/secondSection/secondHomPage.dart';
+import 'package:cartrack_application/widget.dart/buttonStateFull.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,8 +16,15 @@ class myApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
       debugShowCheckedModeBanner: false,
-      // home: HomePage(),
-      home: SecondHomePage(),
+      home: HomePage(),
+      // home:ButtonStateFull(),
+
+      // ),
+
+      routes: {
+        '/secondhomepage': (context) => const SecondHomePage(),
+      },
+      // home: SecondHomePage(),
     );
   }
 }

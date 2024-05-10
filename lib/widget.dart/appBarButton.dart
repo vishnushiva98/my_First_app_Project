@@ -42,8 +42,9 @@ class AppBarButton extends StatelessWidget {
                   child: Text(barButtontext,
                       style: TextStyle(
                           fontSize: 13,
+                          fontFamily: 'SpaceGrotesk',
                           color: Colors.white,
-                          fontWeight: FontWeight.w500)),
+                          fontWeight: FontWeight.w700)),
                 ),
               ],
             ),

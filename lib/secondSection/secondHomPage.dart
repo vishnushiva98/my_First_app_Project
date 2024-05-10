@@ -164,6 +164,7 @@ class SecondHomePage extends StatelessWidget {
                 ],
               ),
               SingleChildScrollView(
+                padding: EdgeInsets.only(bottom: 20),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
@@ -198,6 +199,65 @@ class SecondHomePage extends StatelessWidget {
                   ],
                 ),
               ),
+              Divider(
+                color: Colors.grey,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 15.0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CarHeder(
+                          carText: " from ",
+                          carFontColor: Colors.grey,
+                          carFontSize: 14,
+                          carFontWeight: FontWeight.bold,
+                        ),
+                        Row(
+                          children: [
+                            CarHeder(
+                              carText: " \$800 ",
+                              carFontColor: Colors.black,
+                              carFontSize: 22,
+                              carFontWeight: FontWeight.bold,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 6.0),
+                              child: CarHeder(
+                                carText: " / day ",
+                                carFontColor: Colors.grey,
+                                carFontSize: 13,
+                                carFontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0, top: 4),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.only(
+                                top: 15, bottom: 15, left: 60, right: 60)),
+                        child: Text(
+                          "Book Now",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'SpaceGrotesk',
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         )
@@ -207,7 +267,6 @@ class SecondHomePage extends StatelessWidget {
 
   Widget FirstFunction() {
     return Container(
-      // height: MediaQuery.of(context).size.width / 0.9,
       height: 437,
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -219,13 +278,11 @@ class SecondHomePage extends StatelessWidget {
         children: [
           ImageIconFor(
             ImageIcon: Icons.arrow_back_ios,
-            ImageLeft: 20,
-            ImageTop: 30,
+            ImageLeft: 0,
           ),
           ImageIconFor(
             ImageIcon: Icons.upload,
-            ImageLeft: 350,
-            ImageTop: 30,
+            ImageLeft: 330,
           ),
           Positioned(
             bottom: 20,

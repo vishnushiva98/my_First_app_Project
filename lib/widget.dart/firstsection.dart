@@ -24,28 +24,29 @@ class firstSection extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(children: [
+                //  _ButtonStateFullState(),
                 firstSectionWidget(
                   menuIconControl: true,
                   menuIcon: Icons.tune,
                   menuText: "All filtter",
-                  menuAction: () {},
+                  // menuAction: () {},
                 ),
                 firstSectionWidget(
                   menuIconControl: false,
                   menuText: "\$200-\$1,000 / day ",
-                  menuAction: () {},
+                  // menuAction: () {},
                 ),
                 firstSectionWidget(
                   menuText: "Brand",
-                  menuAction: () {},
+                  // menuAction: () {},
                 ),
                 firstSectionWidget(
                   menuText: "Body",
-                  menuAction: () {},
+                  // menuAction: () {},
                 ),
                 firstSectionWidget(
                   menuText: "Model",
-                  menuAction: () {},
+                  // menuAction: () {},
                 ),
               ]),
             ),
@@ -97,7 +98,9 @@ class firstSection extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(),
+            Divider(
+              color: Colors.grey,
+            ),
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,6 +108,7 @@ class firstSection extends StatelessWidget {
                   Text(
                     "165 available",
                     style: TextStyle(
+                        fontFamily: 'SpaceGrotesk',
                         color: Colors.black,
                         fontSize: 13,
                         fontWeight: FontWeight.w600),
@@ -115,15 +119,16 @@ class firstSection extends StatelessWidget {
                       // mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 5),
+                          padding: EdgeInsets.only(left: 5, right: 3),
                           child: Text("Popular",
                               style: TextStyle(
+                                  fontFamily: 'SpaceGrotesk',
                                   fontSize: 13,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600)),
                         ),
                         Icon(
-                          Icons.tune_outlined,
+                          Icons.layers_outlined,
                           color: Colors.black,
                           size: 13,
                         ),
@@ -199,31 +204,31 @@ class firstSection extends StatelessWidget {
               NavIcon: Icons.search,
               NavText: "SEARCH",
               NavAction: () {
-                "one";
+                print("one");
               },
             ),
             Spacer(),
             BottomNav(
-              NavIcon: Icons.favorite,
+              NavIcon: Icons.favorite_border_outlined,
               NavText: "FAVORIE",
-               NavAction: () {
-                "one";
+              NavAction: () {
+                print("one");
               },
             ),
             Spacer(),
             BottomNav(
-              NavIcon: Icons.chat,
+              NavIcon: Icons.chat_bubble_outline,
               NavText: "CHAT",
-               NavAction: () {
-                "one";
+              NavAction: () {
+                print("one");
               },
             ),
             Spacer(),
             BottomNav(
-              NavIcon: Icons.person,
+              NavIcon: Icons.person_2_outlined,
               NavText: "PROFILE",
-               NavAction: () {
-                "one";
+              NavAction: () {
+                print("one");
               },
             ),
           ],

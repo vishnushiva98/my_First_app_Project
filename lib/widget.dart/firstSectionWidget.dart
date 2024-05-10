@@ -1,14 +1,16 @@
+import 'package:cartrack_application/widget.dart/assets.dart';
 import 'package:flutter/material.dart';
 
 class firstSectionWidget extends StatelessWidget {
   final String menuText;
-  final void Function() menuAction;
+  // final void Function() menuAction;
   final IconData? menuIcon;
   final bool menuIconControl;
+  final isPressed = false;
 
   firstSectionWidget({
     required this.menuText,
-    required this.menuAction,
+    // required this.menuAction,
     this.menuIcon,
     this.menuIconControl = false,
   });
@@ -28,11 +30,13 @@ class firstSectionWidget extends StatelessWidget {
 
     return Container(
       child: Padding(
-        padding: const EdgeInsets.all(4.0),
+        padding: const EdgeInsets.only(bottom: 15.0, right: 8),
         child: OutlinedButton(
-          onPressed: menuAction,
+          // onPressed: menuAction,
+          onPressed: () {},
           style: OutlinedButton.styleFrom(
             // backgroundColor: Colors.grey,
+
             padding: EdgeInsets.only(
               right: 10,
               left: 10,
@@ -50,9 +54,11 @@ class firstSectionWidget extends StatelessWidget {
                 child: Text(
                   menuText,
                   style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600),
+                    fontSize: 12,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'SpaceGrotesk',
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -78,6 +84,7 @@ class FirstSectionImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: 15),
       child: Column(
         children: [
           Container(
@@ -99,9 +106,10 @@ class FirstSectionImages extends StatelessWidget {
               Text(
                 imageText,
                 style: TextStyle(
+                    fontFamily: 'SpaceGrotesk',
                     color: Colors.black,
                     fontSize: 13,
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.bold),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
@@ -150,42 +158,74 @@ class firstFrimOut extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 11.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(13),
-                    child: Image.asset(
-                      frimOutImage,
-                      width: MediaQuery.of(context).size.width / 1,
-                      height: MediaQuery.of(context).size.height / 3.6,
-                      fit: BoxFit.cover,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/secondhomepage');
+                      },
+                      child: Image.asset(
+                        frimOutImage,
+                        width: MediaQuery.of(context).size.width / 1,
+                        height: MediaQuery.of(context).size.height / 3.6,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(FrimOutText,
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700)),
-                    TextButton(
-                      onPressed: () {},
-                      child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: const Color.fromARGB(255, 206, 176, 3),
-                            size: 17,
+                    Row(
+                      children: [
+                        Text(FrimOutText,
+                            style: TextStyle(
+                                fontFamily: 'SpaceGrotesk',
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700)),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 1.0),
+                              child: Container(
+                                width: 18,
+                                height: 18,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(cd),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    borderRadius: BorderRadius.circular(50)),
+                              ),
+                            ),
+                          ],
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                color: const Color.fromARGB(255, 206, 176, 3),
+                                size: 17,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 2),
+                                child: Text(FrimOutRateText,
+                                    style: TextStyle(
+                                        fontFamily: 'SpaceGrotesk',
+                                        fontSize: 13,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold)),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 2),
-                            child: Text(FrimOutRateText,
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w700)),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -200,8 +240,9 @@ class firstFrimOut extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "\ day",
+                      " / day",
                       style: TextStyle(
+                        fontFamily: 'SpaceGrotesk',
                         fontSize: 13,
                         color: Colors.grey,
                         fontWeight: FontWeight.w600,
