@@ -25,7 +25,7 @@ class BottomNav extends StatelessWidget {
             Text(
               NavText,
               style: TextStyle(
-                  fontFamily: 'SpaceGrotesk',
+                  
                   color: Colors.black,
                   fontSize: 12,
                   fontWeight: FontWeight.bold),

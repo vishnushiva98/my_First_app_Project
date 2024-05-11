@@ -1,6 +1,5 @@
-import 'package:cartrack_application/HomePage.dart';
-import 'package:cartrack_application/secondSection/secondHomPage.dart';
-import 'package:cartrack_application/widget.dart/buttonStateFull.dart';
+import 'package:cartrack_application/Section/SecondSection/SecondSection.dart';
+import 'package:cartrack_application/Section/SectionOne/FirstSection.dart';
 
 import 'package:flutter/material.dart';
 
@@ -14,10 +13,11 @@ class myApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
+      theme: ThemeData(fontFamily: 'SpaceGrotesk'),
+      // theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
-      // home:ButtonStateFull(),
+      home: FirstSectionHome(),
+      // home: FirstSectionHome(),
 
       // ),
 

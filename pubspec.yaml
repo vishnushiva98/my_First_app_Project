@@ -84,9 +84,9 @@ flutter:
   #         style: italic
     - family: SpaceGrotesk
       fonts:
-        - asset: assets/fonts/SpaceGrotesk-VariableFont_wght.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-VariableFont_wght.ttf
+        - asset: assets/fonts/SpaceGrotesk/SpaceGrotesk-VariableFont_wght.ttf
+          weight: 700
   
   #
   # For details regarding fonts from package dependencies,

@@ -1,8 +1,8 @@
-import 'package:cartrack_application/secondSection/widgetSecond.dart';
+import 'package:cartrack_application/widget.dart/SecondSectionWidget/OneSecondWidgets.dart';
+import 'package:cartrack_application/widget.dart/SecondSectionWidget/TwoSectionWidget.dart';
+import 'package:cartrack_application/widget.dart/SecondSectionWidget/therdSectionWidget.dart';
 import 'package:cartrack_application/widget.dart/assets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SecondHomePage extends StatelessWidget {
   const SecondHomePage({super.key});
@@ -250,7 +250,6 @@ class SecondHomePage extends StatelessWidget {
                           "Book Now",
                           style: TextStyle(
                             color: Colors.white,
-                            fontFamily: 'SpaceGrotesk',
                           ),
                         ),
                       ),

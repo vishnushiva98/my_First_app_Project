@@ -17,7 +17,7 @@ class AppBarButton extends StatelessWidget {
     return Container(
       alignment: Alignment.topLeft,
       child: Container(
-        // width: MediaQuery.of(context).size.width / 1.3,
+        width: MediaQuery.of(context).size.width / 1.3,
         child: SizedBox(
           width: barButtonSize,
           child: ElevatedButton(
@@ -42,7 +42,7 @@ class AppBarButton extends StatelessWidget {
                   child: Text(barButtontext,
                       style: TextStyle(
                           fontSize: 13,
-                          fontFamily: 'SpaceGrotesk',
+                          
                           color: Colors.white,
                           fontWeight: FontWeight.w700)),
                 ),
